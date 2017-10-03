@@ -1,5 +1,5 @@
 # Service Worker Exploration
-Made by [yussan](https://twitter.com/xyussanx). Please read [Getting Started](#getting-started) to start.
+Please read [Getting Started](#getting-started) to start.
 
 ![service worker cover](https://philna.sh/images/service-worker.png)
 
@@ -15,7 +15,12 @@ ref : https://developers.google.com/web/fundamentals/primers/service-workers/
 
 ## Index 
 * [Cache static files](https://github.com/yussan/exploration-service-worker/tree/master/1.0.cache-static-files)
+  
+  The Service Worker API comes with a Cache interface, that lets you create stores of responses keyed by request. While this interface was intended for service workers it is actually exposed on the window, and can be accessed from anywhere in your scripts. The entry point is caches.
+  
 * [Offline first](https://github.com/yussan/exploration-service-worker/tree/master/2.0.offline-first)
+
+  Do not let your visitor go because there is not internet connection. Offline first lets you to display web content even     though no internet network is available.
 * [WIP] Push notification
 * [WIP] Geofencing
 
@@ -26,3 +31,6 @@ Service worker only support `localhost` and `HTTPS`, you need some webserver to 
 
 ## Getting Started
 We split the module into several directory, to get started please read `README.md` we provide in each directory.
+
+## Contributtors
+* [Yusuf Akhsan H.](https://twitter.com/xyussanx)
