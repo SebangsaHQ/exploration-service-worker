@@ -14,8 +14,8 @@ Before service worker, there was one other API that gave users an offline experi
 ref : https://developers.google.com/web/fundamentals/primers/service-workers/
 
 ## Index 
-* [Cache static files]()
-* [Offline first]()
+* [Cache static files](https://github.com/yussan/exploration-service-worker/tree/master/1.0.cache-static-files)
+* [Offline first](https://github.com/yussan/exploration-service-worker/tree/master/2.0.offline-first)
 * [WIP] Push notification
 * [WIP] Geofencing
 
