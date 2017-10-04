@@ -1,4 +1,4 @@
-# Service Worker - Cache Static Files
+# 1.0 Service Worker - Cache Static Files
 In this step we will create caching system stored in service worker.
 
 ## Run 
