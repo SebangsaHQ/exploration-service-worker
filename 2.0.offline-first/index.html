@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/assets/style.css">
+        <script>
+            // service worker dettection
+            if('serviceWorker' in navigator)
+            {
+                navigator.serviceWorker.register('service-worker.js')
+                    .then(reg => {
+                        console.log(reg)
+                    })
+                    .catch(err => {
+                        console.error(err)
+                    })
+            }
+        </script>
+        <title>Handle Offline - Service Worker</title>
+    </head>
+    <body>
+        <div>
+            <h1>Handle Offline using Service Worker</h1>
+            <p>Please check all cached static files in Chrome Developer Tools.<br/>
+            Service worker only worked for localhost and HTTPS, gogo </p>
+        </div>
+    </body>
+</html>
