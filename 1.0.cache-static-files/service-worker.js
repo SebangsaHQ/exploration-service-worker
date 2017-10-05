@@ -1,8 +1,6 @@
 'use strict';
 const CACHE_NAME = 'cache-v1';
 const URLS_TO_CACHE = [
-    '/assets/style.css',
-    '/assets/main.js'
 ];
 
 // init
