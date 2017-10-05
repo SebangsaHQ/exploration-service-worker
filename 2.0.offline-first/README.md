@@ -8,9 +8,9 @@ We are using `http-server` and `Google Chrome` to test this code.
 
 **Online**
 
-![online page](https://pbs.twimg.com/media/DLYZv35WsAAxFeI.jpg)
-
 First open in browser using localhost, and let service worker instaling. 
+
+![online page](https://pbs.twimg.com/media/DLYZv35WsAAxFeI.jpg)
 
 **Offline**
 
