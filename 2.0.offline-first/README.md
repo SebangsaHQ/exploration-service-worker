@@ -6,19 +6,16 @@ Meaning of offline, please follow [this link](https://www.html5rocks.com/en/tuto
 ## Run
 We are using `http-server` and `Google Chrome` to test this code.
 
-** Online **
+**Online**
 
 ![online page](https://pbs.twimg.com/media/DLYZv35WsAAxFeI.jpg)
 
 First open in browser using localhost, and let service worker instaling. 
 
-** Offline **
+**Offline**
 Google Chrome developer tools has afeature to simulate if dead network happen. Open developer tools -> network -> and check offline. Refresh the page.
 
-![offline page](https://pbs.twimg.com/media/DLYZx-3UIAALHy1.jpg)
-
-**Test offline**
-Google Chrome developer tool has a feature to simulate if the network is dead. 
+![offline page](https://pbs.twimg.com/media/DLYZx-3UIAALHy1.jpg) 
 
 ## Reference 
 * https://mobiforge.com/design-development/taking-web-offline-service-workers
