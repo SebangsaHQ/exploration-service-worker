@@ -1,20 +1,20 @@
 # 2.0 Service Worker - Offline First
-Meaning of offline, please follow [this link](https://www.html5rocks.com/en/tutorials/offline/whats-offline/). Two main reason why you have to use offline first :
-* **avability** : a web app still worked and can be access by users event without internet connection.
-* **peformance** : because web content available offline, this mean quicker to retreive and present content to users because no need to make network request.
+To get a better understanding of "offline", please follow [this link](https://www.html5rocks.com/en/tutorials/offline/whats-offline/). There are two main reason why you should build your applications offline first:
+* **availability** : a web app still works and can be accessed by users even without an internet connection.
+* **peformance** : because web content is available offline, there is no need to make a network request and content is presented to users more quickly.
 
 ## Run
 We are using `http-server` and `Google Chrome` to test this code.
 
 **Online**
 
-First open in browser using localhost, and let service worker instaling. 
+First open in browser using localhost, and let service worker install. 
 
 ![online page](https://pbs.twimg.com/media/DLYZv35WsAAxFeI.jpg)
 
 **Offline**
 
-Google Chrome developer tools has afeature to simulate if dead network happen. Open developer tools -> network -> and check offline. Refresh the page.
+Google Chrome developer tools has a feature to simulate a dead network. Open developer tools -> network -> and check the setting labeled "Offline". Refresh the page.
 
 ![offline page](https://pbs.twimg.com/media/DLYZx-3UIAALHy1.jpg) 
 
