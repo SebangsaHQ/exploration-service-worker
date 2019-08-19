@@ -5,6 +5,19 @@
         <link rel="stylesheet" href="/assets/style.css">
         <script src="/assets/main.js"></script>
         <title>Cache Static Files - Service Worker</title>
+        <script>
+            // service worker dettection
+            if('serviceWorker' in navigator)
+            {
+                navigator.serviceWorker.register('service-worker.js')
+                    .then(reg => {
+                        console.log(reg)
+                    })
+                    .catch(err => {
+                        console.error(err)
+                    })
+            }
+        </script>
     </head>
     <body>
         <div>
