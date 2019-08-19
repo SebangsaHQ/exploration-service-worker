@@ -32,5 +32,9 @@ Service worker only support `localhost` and `HTTPS`, you need some webserver to 
 ## Getting Started
 We split the module into several directory, to get started please read `README.md` we provide in each directory.
 
+## Service Worker Compatilbility (last update: 19-08-2019)
+Ref : https://caniuse.com/#feat=serviceworkers
+![Service Worker Compatibily](https://res.cloudinary.com/dhjkktmal/image/upload/v1566198365/github/Screenshot_from_2019-08-19_14-05-29.png)
+
 ## Contributtors
 * [Yusuf Akhsan H.](https://twitter.com/xyussanx)
