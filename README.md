@@ -14,11 +14,11 @@ Before service worker, there was one other API that gave users an offline experi
 ref : https://developers.google.com/web/fundamentals/primers/service-workers/
 
 ## Index 
-* [1.0 Cache static files](https://github.com/yussan/exploration-service-worker/tree/master/1.0.cache-static-files)
+* [1.0 Cache static files](tree/master/1.0.cache-static-files)
   
   The Service Worker API comes with a Cache interface, that lets you create stores of responses keyed by request. While this interface was intended for service workers it is actually exposed on the window, and can be accessed from anywhere in your scripts. The entry point is caches.
   
-* [2.0 Offline first](https://github.com/yussan/exploration-service-worker/tree/master/2.0.offline-first)
+* [2.0 Offline first](tree/master/2.0.offline-first)
 
   Do not let your visitor go because there is not internet connection. Offline first lets you to display web content even     though no internet network is available.
 * [WIP] Push notification
