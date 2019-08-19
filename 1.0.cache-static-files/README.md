@@ -1,12 +1,14 @@
 # 1.0 Service Worker - Cache Static Files
 In this step we will create a caching system stored in service worker.
 
+![review on Google Chrome Dev Tools](https://res.cloudinary.com/dhjkktmal/image/upload/v1566195372/github/Screenshot_from_2019-08-19_13-15-06.png)
+
 ## Run 
 Make sure you have installed [http-server](https://www.npmjs.com/package/http-server) globally and then run it in this directory: 
 ```
-http-server ./
+http-server ./ -p 18080
 ```
-Open your browser and access [http://localhost:8080](http://localhost:8080) (Note: http-server can be configured to start on a different port)
+Open your browser and access [http://localhost:18080](http://localhost:18080) (Note: http-server can be configured to start on a different port)
 
 ## Before and After
 **Before using Service Worker**
