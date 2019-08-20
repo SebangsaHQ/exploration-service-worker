@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="/assets/style.css" />
+  <script>
+    // function to execute by background sync
+    submitData = function () {
+      return new Promise(resolve => {
+        console.log(
+          "forgot password for",
+          document.getElementById("input-email").value
+        )
+        resolve();
+      }).catch(e => console.error(e));
+    };
+
+    // service worker dettection
+    if ("serviceWorker" in navigator) {
+      // register service worker
+      navigator.serviceWorker.register("service-worker.js");
+
+      // after servis worker ready
+      navigator.serviceWorker.ready
+        .then(reg => {
+          // listen submit on form forgot password
+          document
+            .getElementById("form-forgot-password")
+            .addEventListener("submit", function (e) {
+              // check is browser support background sync
+              if (reg.sync) {
+                // save data to sw controller
+                navigator.serviceWorker.controller.postMessage({ type: "sync-email-forgot-password", email: document.getElementById("input-email").value })
+                reg.sync
+                  .register("sync-submit-forgot-password")
+                  .catch(function (err) {
+                    console.error(err);
+                    // system was unable to register for a sync,
+                    // this could be an OS-level restriction
+                    submitData()
+                  });
+              } else {
+                console.warn("Your browser not support background sync!")
+                // browser not support background sync
+                if (navigator.onLine) {
+                  submitData()
+                } else {
+                  console.error(
+                    "You are offline! When your internet returns, we'll finish up your request."
+                  );
+                }
+              }
+            });
+        })
+        .catch(err => {
+          console.error(err);
+        });
+    }
+
+    // global offline connection listener
+    window.addEventListener("offline", function () {
+      console.error("You have lost internet access :(");
+    });
+
+    // global online connection listener
+    window.addEventListener("online", function () {
+      console.log("back to online :)");
+      // if (!navigator.serviceWorker && !window.SyncManager) {
+      //   submitData()
+      // }
+    });
+  </script>
+  <title>Background Sync - Service Worker</title>
+</head>
+
+<body>
+  <div>
+    <h1>Background Sync - Service Worker</h1>
+    <p>
+      After page loaded, make it offline using Google Chrome dev tools, or
+      something else. Try to submit data, and then make it online.
+    </p>
+    <form id="form-forgot-password" action="javascript:;" method="post">
+      <input id="input-email" type="email" required />
+      <button type="submit">Forgot Password</button>
+    </form>
+  </div>
+</body>
+
+</html>

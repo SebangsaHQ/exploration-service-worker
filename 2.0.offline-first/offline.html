@@ -1,27 +1,26 @@
-
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="/assets/style.css">
-        <script>
-            // service worker dettection
-            if('serviceWorker' in navigator)
-            {
-                navigator.serviceWorker.register('service-worker.js')
-                    .then(reg => {
-                        console.log(reg)
-                    })
-                    .catch(err => {
-                        console.error(err)
-                    })
-            }
-        </script>
-        <title>Page is Offline - Service Worker</title>
-    </head>
-    <body>
-        <div>
-            <h1>Page is Offline v2</h1>
-            <p>please check you internet connection, and reload this page </p>
-        </div>
-    </body>
+  <head>
+    <link rel="stylesheet" href="/assets/style.css" />
+    <script>
+      // service worker dettection
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("service-worker.js")
+          .then(reg => {
+            console.log(reg);
+          })
+          .catch(err => {
+            console.error(err);
+          });
+      }
+    </script>
+    <title>Page is Offline - Service Worker</title>
+  </head>
+  <body>
+    <div>
+      <h1>Page is Offline v2</h1>
+      <p>please check you internet connection, and reload this page</p>
+    </div>
+  </body>
 </html>
