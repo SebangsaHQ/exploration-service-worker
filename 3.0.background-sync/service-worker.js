@@ -1,3 +1,5 @@
+"use strict"
+
 let syncStore = {}
 // update this version to register no service worker
 const SW_VERSION = "0.0.1"

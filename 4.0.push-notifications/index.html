@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="/assets/style.css" />
+  <script>
+    // service worker dettection
+    if ("serviceWorker" in navigator) {
+      // register service worker
+      navigator.serviceWorker.register("service-worker.js");
+    }
+  </script>
+  <title>Push Notification - Service Worker</title>
+</head>
+
+<body>
+  <div>
+    <h1>Push Notification - Service Worker</h1>
+    <p>
+      Please read README.md to get started.
+    </p>
+  </div>
+</body>
+
+</html>
