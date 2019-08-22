@@ -1,4 +1,8 @@
-const syncStore = {}
+"use strict"
+
+let syncStore = {}
+// update this version to register no service worker
+const SW_VERSION = "0.0.1"
 
 // Install Service Worker
 self.addEventListener('install', function(event){
@@ -16,6 +20,7 @@ self.addEventListener("message", function(event) {
     // get a unique id to save the data
     syncStore.forgot_password_data = event.data.email
     // register a sync and pass the id as tag for it to get the data
+    // but not now
     // self.registration.sync.register(id)
   }
 })

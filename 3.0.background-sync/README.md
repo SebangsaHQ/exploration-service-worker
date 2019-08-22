@@ -8,7 +8,7 @@ Background sync is a new web API that lets you defer actions until the user has 
 Make sure you have installed [http-server](https://www.npmjs.com/package/http-server) globally and then run it in this directory:
 
 ```
-http-server ./ -p 18083
+http-server -p 18083
 ```
 
 And then set `network to offline` using Google Chrome dev tools or something else, try to submit form.

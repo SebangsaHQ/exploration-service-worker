@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="/assets/style.css" />
+  <title>LifeCycle - Service Worker</title>
+</head>
+
+<body>
+  <div>
+    <h1>lifecycle - Service Worker</h1>
+    <!-- service worker status -->
+    <div id="text-container">Service worker is instaling...</div>
+  </div>
+  <script>
+    const textContainer = document.getElementById("text-container")
+    // service worker dettection
+    if ("serviceWorker" in navigator) {
+      // register service worker
+      navigator.serviceWorker.register("service-worker.js").then(reg => {
+        console.log('SW registered!', reg)
+        textContainer.innerHTML = "Service Worker instalation success"
+      }).catch(err => {
+        textContainer.innerHTML = "Service Worker instalation error"
+        console.log('Boo!', err)
+      });
+    }
+  </script>
+</body>
+
+</html>

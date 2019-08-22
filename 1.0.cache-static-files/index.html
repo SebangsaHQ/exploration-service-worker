@@ -1,29 +1,33 @@
-
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="/assets/style.css">
-        <script src="/assets/main.js"></script>
-        <title>Cache Static Files - Service Worker</title>
-        <script>
-            // service worker dettection
-            if('serviceWorker' in navigator)
-            {
-                navigator.serviceWorker.register('service-worker.js')
-                    .then(reg => {
-                        console.log(reg)
-                    })
-                    .catch(err => {
-                        console.error(err)
-                    })
-            }
-        </script>
-    </head>
-    <body>
-        <div>
-            <h1>Caching using Service Worker</h1>
-            <p>Please check all cached static files in Chrome Developer Tools.<br/>
-            Service worker only worked for localhost and HTTPS, gogo </p>
-        </div>
-    </body>
+
+<head>
+    <link rel="stylesheet" href="/assets/style.css">
+    <script src="/assets/main.js"></script>
+    <title>Cache Static Files - Service Worker</title>
+    <script>
+        // service worker dettection
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(reg => {
+                    console.log(reg)
+                })
+                .catch(err => {
+                    console.error(err)
+                })
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <h1>Caching using Service Worker</h1>
+        <p>Please check all cached static files in Chrome Developer Tools.<br />
+            Service worker only worked for localhost and HTTPS, gogo.
+            <br />
+            Please read README.md to get started. </p>
+
+    </div>
+</body>
+
 </html>

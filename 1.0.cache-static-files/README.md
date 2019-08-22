@@ -6,9 +6,9 @@ In this step we will create a caching system stored in service worker.
 ## Run 
 Make sure you have installed [http-server](https://www.npmjs.com/package/http-server) globally and then run it in this directory: 
 ```
-http-server ./ -p 18080
+http-server -p 18081
 ```
-Open your browser and access [http://localhost:18080](http://localhost:18080) (Note: http-server can be configured to start on a different port)
+Open your browser and access [http://localhost:18081](http://localhost:18081) (Note: http-server can be configured to start on a different port)
 
 ## Before and After
 **Before using Service Worker**
