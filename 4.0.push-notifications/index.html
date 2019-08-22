@@ -4,10 +4,48 @@
 <head>
   <link rel="stylesheet" href="/assets/style.css" />
   <script>
+
+    // Let's check if the browser supports notifications
+    if (!("Notification" in window)) {
+      console.error("This browser does not support system notifications");
+      // This is not how you would really do things if they aren't supported. :)
+    }
+
+    else if (Notification.permission === 'denied') {
+      console.error("Notification permission is denied, so you can't continue!")
+    }
+
+    else if (Notification.permission !== 'denied') {
+      Notification.requestPermission();
+    }
+
     // service worker dettection
     if ("serviceWorker" in navigator) {
       // register service worker
-      navigator.serviceWorker.register("service-worker.js");
+      navigator.serviceWorker.register("service-worker.js").then(reg => {
+        if (Notification.permission === 'granted') {
+          const options = {
+            body: 'Here is a notification body!',
+            icon: './assets/icon.png',
+            vibrate: [100, 50, 100],
+            data: {
+              dateOfArrival: Date.now(),
+              primaryKey: 1
+            },
+            actions: [
+              {
+                action: 'explore', title: 'Explore this new world',
+                icon: 'images/checkmark.png'
+              },
+              {
+                action: 'close', title: 'Close notification',
+                icon: 'images/xmark.png'
+              },
+            ]
+          };
+          reg.showNotification('Servis Worker is Installed', options);
+        }
+      });
     }
   </script>
   <title>Push Notification - Service Worker</title>

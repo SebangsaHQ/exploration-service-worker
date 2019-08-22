@@ -18,4 +18,5 @@ Open your browser and access [http://localhost:18084](http://localhost:18084) (N
 
 ## Ref :
 
+- Web Notification : https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API
 - https://developers.google.com/web/fundamentals/codelabs/push-notifications/
