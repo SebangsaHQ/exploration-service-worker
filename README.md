@@ -21,6 +21,11 @@ ref : https://developers.google.com/web/fundamentals/primers/service-workers/
 * [2.0 Offline first](2.0.offline-first)
 
   Do not let your visitor go because there is not internet connection. Offline first lets you to display web content even     though no internet network is available.
+
+* [3.0 Background Sync](3.0.background-sync)
+
+  Background sync is a new web API that lets you defer actions until the user has stable connectivity. This is useful for ensuring that whatever the user wants to send, is actually sent
+
 * [WIP] Push notification
 * [WIP] Geofencing
 
