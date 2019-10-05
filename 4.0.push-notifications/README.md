@@ -15,8 +15,10 @@ Open your browser and access [http://localhost:18084](http://localhost:18084) (N
 ## Compatibility
 
 - https://caniuse.com/#feat=notifications
+- https://caniuse.com/#feat=push-api
 
 ## Ref :
 
 - Web Notification : https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API
-- https://developers.google.com/web/fundamentals/codelabs/push-notifications/
+- Push Notification : https://developers.google.com/web/fundamentals/codelabs/push-notifications/
+- Push Api : https://developer.mozilla.org/en-US/docs/Web/API/Push_API

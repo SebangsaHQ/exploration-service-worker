@@ -9,8 +9,17 @@ self.addEventListener("install", function(event) {
 });
 
 // Service Worker Active
-self.addEventListener("activate", function(event) {
+self.addEventListener("activate", async function(event) {
   console.log("SW activated!");
+
+  // listen to remote notification
+  try {
+    const options = {} 
+    const subscription = await self.registration.pushManager.subscribe(options)
+    console.log(JSON.stringify(subscription))
+  } catch(e) {
+    console.error("subcscription error", e)
+  }
 });
 
 // on close notification event listeners

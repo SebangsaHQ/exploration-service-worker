@@ -39,6 +39,7 @@
 
     else if (Notification.permission !== 'denied') {
       Notification.requestPermission(result => {
+        console.log("result", result)
         if (result === "granted") {
           swRegister()
         }
