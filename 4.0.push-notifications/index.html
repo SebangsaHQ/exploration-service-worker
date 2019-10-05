@@ -4,6 +4,24 @@
 <head>
   <link rel="stylesheet" href="/assets/style.css" />
   <script>
+    // notification options
+    const Notification_Options = {
+      body: 'Here is a notification body!',
+      icon: '/assets/icon.png',
+      vibrate: [100, 50, 100],
+      data: {
+        dateOfArrival: Date.now(),
+        primaryKey: 1
+      },
+      actions: [
+        {
+          action: 'explore', title: 'Explore this new world',
+        },
+        {
+          action: 'close', title: 'Close notification',
+        },
+      ]
+    };
 
     // Let's check if the browser supports notifications
     if (!("Notification" in window)) {
@@ -13,40 +31,35 @@
 
     else if (Notification.permission === 'denied') {
       console.error("Notification permission is denied, so you can't continue!")
+    } 
+
+    else if (Notification.permission === "granted") {
+      swRegister()
     }
 
     else if (Notification.permission !== 'denied') {
-      Notification.requestPermission();
-    }
-
-    // service worker dettection
-    if ("serviceWorker" in navigator) {
-      // register service worker
-      navigator.serviceWorker.register("service-worker.js").then(reg => {
-        if (Notification.permission === 'granted') {
-          const options = {
-            body: 'Here is a notification body!',
-            icon: './assets/icon.png',
-            vibrate: [100, 50, 100],
-            data: {
-              dateOfArrival: Date.now(),
-              primaryKey: 1
-            },
-            actions: [
-              {
-                action: 'explore', title: 'Explore this new world',
-                icon: 'images/checkmark.png'
-              },
-              {
-                action: 'close', title: 'Close notification',
-                icon: 'images/xmark.png'
-              },
-            ]
-          };
-          reg.showNotification('Servis Worker is Installed', options);
+      Notification.requestPermission(result => {
+        console.log("result", result)
+        if (result === "granted") {
+          swRegister()
         }
       });
     }
+
+    // register service worker
+    function swRegister() {
+      // service worker dettection
+      if ("serviceWorker" in navigator) {
+        // register service worker
+        navigator.serviceWorker.register("service-worker.js").then(reg => {
+          if (Notification.permission === 'granted') {
+            // call notification inside service worker
+            reg.showNotification('Servis Worker is Installed', Notification_Options);
+          }
+        });
+      }
+    }
+
   </script>
   <title>Push Notification - Service Worker</title>
 </head>
