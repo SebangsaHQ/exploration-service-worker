@@ -127,37 +127,38 @@ function initialUI() {
   function unsubscribeUser() {
     console.log("unsubscribe action.");
     // get subscription first
-    return SW_REG.pushManager.getSubscription(function(subscription) {
-      if(subscription) {
-        return subscription.unsubscribe();
-      }
-    })
-    .catch(function(err) {
-      console.error("Error to unsubscribe", err)
-    })
-    .then(function() {
-      updateSubscriptionOnServer(null);
-      is_subscribe = false;
-      updateBtn();
-    })
-
+    SW_REG.pushManager
+      .getSubscription()
+      .catch(function(err) {
+        console.error("Error to unsubscribe", err);
+      })
+      .then(function(subscription) {
+        // if subscription available, so unsubscribe
+        console.log("subscription", subscription);
+        if (subscription) {
+          subscription.unsubscribe();
+        }
+        updateSubscriptionOnServer(null);
+        is_subscribe = false;
+        updateBtn();
+      });
   }
 
   // update subscribtion on server
   function updateSubscriptionOnServer(subscription) {
-    if(subscription) {
-      subscribe_text.innerHTML = JSON.stringify(subscription)
+    if (subscription) {
+      subscribe_text.innerHTML = JSON.stringify(subscription);
     } else {
-      subscribe_text.innerHTML = ""
+      subscribe_text.innerHTML = "";
     }
   }
 }
 
 function urlB64ToUint8Array(base64String) {
-  const padding = '='.repeat((4 - base64String.length % 4) % 4);
+  const padding = "=".repeat((4 - (base64String.length % 4)) % 4);
   const base64 = (base64String + padding)
-    .replace(/\-/g, '+')
-    .replace(/_/g, '/');
+    .replace(/\-/g, "+")
+    .replace(/_/g, "/");
 
   const rawData = window.atob(base64);
   const outputArray = new Uint8Array(rawData.length);
