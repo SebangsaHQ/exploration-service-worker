@@ -12,6 +12,10 @@ http-server -p 18084
 
 Open your browser and access [http://localhost:18084](http://localhost:18084) (Note: http-server can be configured to start on a different port)
 
+## Testing
+- Using Google Chrome : open dev tools > application > service worker > push
+- Or, you can test it on https://web-push-codelab.glitch.me/
+
 ## Compatibility
 
 - https://caniuse.com/#feat=notifications
