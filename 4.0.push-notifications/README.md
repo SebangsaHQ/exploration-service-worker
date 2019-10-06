@@ -12,6 +12,10 @@ http-server -p 18084
 
 Open your browser and access [http://localhost:18084](http://localhost:18084) (Note: http-server can be configured to start on a different port)
 
+## Testing
+- Using Google Chrome : open dev tools > application > service worker > push
+- Or, you can test it on https://web-push-codelab.glitch.me/
+
 ## Compatibility
 
 - https://caniuse.com/#feat=notifications
@@ -22,3 +26,4 @@ Open your browser and access [http://localhost:18084](http://localhost:18084) (N
 - Web Notification : https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API
 - Push Notification : https://developers.google.com/web/fundamentals/codelabs/push-notifications/
 - Push Api : https://developer.mozilla.org/en-US/docs/Web/API/Push_API
+- Case : https://developers.google.com/web/fundamentals/codelabs/push-notifications

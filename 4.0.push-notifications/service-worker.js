@@ -42,3 +42,18 @@ self.addEventListener("notificationclick", function(e) {
     notification.close();
   }
 });
+
+// push event listener
+self.addEventListener("push", function(e) {
+  console.log('[Service Worker] Push Received.');
+  console.log(`[Service Worker] Push had this data: "${e.data.text()}"`);
+
+  const title = 'Push Service';
+  const options = {
+    body: e.data.text(),
+    icon: "/assets/icon.png",
+    // badge: 'images/badge.png'
+  };
+
+  e.waitUntil(self.registration.showNotification(title, options));
+})
